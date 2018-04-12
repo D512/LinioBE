@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+
+    <head>
+        <title>LINIO Backend</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    
+    <body>
+        <script>
+
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+
+        </script>
+        
+        <h1> Challenge Linio Backend </h1>
+        <div>
+            <p> Write a program that prints all the numbers from 1 to 100. However, for
+            multiples of 3, instead of the number, print "Linio". For multiples of 5 print
+            "IT". For numbers which are multiples of both 3 and 5, print "Linianos".
+
+            But here's the catch: you can use only one `if`. No multiple branches, ternary
+            operators or `else`.</p>
+
+            <button class="accordion">Requirements</button>
+            <div class="panel">
+                <p><ul>
+                    <li> 1 if </li>
+                    <li> You can't use `else`, `else if` or ternary </li>
+                    <li> Unit tests </li>
+                    <li> Feel free to apply your SOLID knowledge </li>
+                    <li> You can write the challenge in any language you want. Here at Linio we are
+                    big fans of PHP, Kotlin and TypeScript </li>
+                </ul></p>
+            </div>
+
+            <button class="accordion">Submission</button>
+            <div class="panel">
+                <p>You can create a public repository on your GitHub account and send the
+                link to us, or just send us a zip file.</p>
+            </div>
+        </div>
+    </body>
+</html>
+
