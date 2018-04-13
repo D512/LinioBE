@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 
 <html>
 
@@ -14,52 +8,129 @@ and open the template in the editor.
     </head>
     
     <body>
-        <script>
-
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight){
-                  panel.style.maxHeight = null;
-                } else {
-                  panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-              });
-            }
-
-        </script>
         
-        <h1> Challenge Linio Backend </h1>
-        <div>
-            <p> Write a program that prints all the numbers from 1 to 100. However, for
-            multiples of 3, instead of the number, print "Linio". For multiples of 5 print
-            "IT". For numbers which are multiples of both 3 and 5, print "Linianos".
+        <h1> Challenge Linio Backend </h1>           
+			
+			<br>
+			<hr>
+			<br>
+            <button class="accordion">Challenge</button>
+				<div class="panel">
+					<p> 
+					Write a program that prints all the numbers from 1 to 100. However, for
+					multiples of 3, instead of the number, print "Linio". For multiples of 5 print
+					"IT". For numbers which are multiples of both 3 and 5, print "Linianos".
 
-            But here's the catch: you can use only one `if`. No multiple branches, ternary
-            operators or `else`.</p>
-
+					But here's the catch: you can use only one `if`. No multiple branches, ternary
+					operators or `else`.
+					</p>
+				</div>
+			<br>
+			<hr>
+			<br>
             <button class="accordion">Requirements</button>
-            <div class="panel">
-                <p><ul>
-                    <li> 1 if </li>
-                    <li> You can't use `else`, `else if` or ternary </li>
-                    <li> Unit tests </li>
-                    <li> Feel free to apply your SOLID knowledge </li>
-                    <li> You can write the challenge in any language you want. Here at Linio we are
-                    big fans of PHP, Kotlin and TypeScript </li>
-                </ul></p>
-            </div>
-
+				<div class="panel">
+					<p><ul>
+						<li> 1 if </li>
+						<li> You can't use `else`, `else if` or ternary </li>
+						<li> Unit tests </li>
+						<li> Feel free to apply your SOLID knowledge </li>
+						<li> You can write the challenge in any language you want. Here at Linio we are
+						big fans of PHP, Kotlin and TypeScript </li>
+					</ul></p>
+				</div>
+			<br>
+			<hr>
+			<br>
             <button class="accordion">Submission</button>
-            <div class="panel">
-                <p>You can create a public repository on your GitHub account and send the
-                link to us, or just send us a zip file.</p>
-            </div>
-        </div>
+				<div class="panel">
+					<p>You can create a public repository on your GitHub account and send the
+					link to us, or just send us a zip file.</p>
+				</div>
+							<br>
+			<hr>
+			<br>
+            <button class="accordion">Solution</button>
+				<div class="panel">
+					<script>//Corro PruebaUnitaria
+document.write("PRUEBA APROBADA: " + PruebaUnitaria().toString()+"<br>");</script>
+				</div>
+							<br>
+			<hr>
+			<br>
+            <button class="accordion">Unit Test</button>
+				<div class="panel">
+					<p>You can create a public repository on your GitHub account and send the
+					link to us, or just send us a zip file.</p>
+				</div>
+				
+				<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+/*Busca Multiplo
+Recibe numero a operar
+Multiplo 1 a buscar
+Multiplo 2 a buscar
+Mensaje a retornar si consigue
+*/
+let BuscaMultiplo = function(num,multiplo1,multiplo2,retorno) 
+{
+	try 
+	{
+	  if ( (num % multiplo1==0) && (num % multiplo2==0) )
+		{
+		  return retorno;
+		} 
+		return num;
+	} 
+	catch (ex) 
+	{
+		return num;
+	}
+}
+
+
+/*
+Realiza el recorrido buscando multiplos
+Recibe inicio limite inferior
+Recibe final limite superior
+*/ 
+let reto = function(inicio,final) 
+{
+  let palabraRetorno = "";
+  for (let i=inicio;i<=final;i++) 
+  {
+    let valor = i;
+    valor = BuscaMultiplo(valor,5,3,"Linianos");
+    valor = BuscaMultiplo(valor,3,1,"Linio");
+    valor = BuscaMultiplo(valor,5,1,"IT");
+    palabraRetorno +=valor+",";
+  }
+  return palabraRetorno;
+} 
+ 
+/*Prueba Unitaria del metodo*/ 
+function PruebaUnitaria() 
+{
+  expectedValue = "1,2,Linio,4,IT,Linio,7,8,Linio,IT,11,Linio,13,14,Linianos,16,17,Linio,19,IT,Linio,22,23,Linio,IT,26,Linio,28,29,Linianos,31,32,Linio,34,IT,Linio,37,38,Linio,IT,41,Linio,43,44,Linianos,46,47,Linio,49,IT,Linio,52,53,Linio,IT,56,Linio,58,59,Linianos,61,62,Linio,64,IT,Linio,67,68,Linio,IT,71,Linio,73,74,Linianos,76,77,Linio,79,IT,Linio,82,83,Linio,IT,86,Linio,88,89,Linianos,91,92,Linio,94,IT,Linio,97,98,Linio,IT,"
+  return (reto(1,100) === expectedValue);
+}
+
+</script>
+				
     </body>
 </html>
 
