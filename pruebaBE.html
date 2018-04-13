@@ -50,20 +50,14 @@
 							<br>
 			<hr>
 			<br>
-            <button class="accordion">Solution</button>
-				<div class="panel">
-					<script>//Corro PruebaUnitaria
-document.write("PRUEBA APROBADA: " + PruebaUnitaria().toString()+"<br>");</script>
-				</div>
-							<br>
-			<hr>
+			<center>
+            <button onclick= alert("SOLUTION:"+reto(1,100))>Solution</button>			
+			
 			<br>
-            <button class="accordion">Unit Test</button>
-				<div class="panel">
-					<p>You can create a public repository on your GitHub account and send the
-					link to us, or just send us a zip file.</p>
-				</div>
-				
+			<br>
+			<br>            
+			<button onclick= alert("TEST:"+PruebaUnitaria().toString())>Unit Test</button>			
+				</center>
 				<script>
 var acc = document.getElementsByClassName("accordion");
 var i;
